@@ -1,5 +1,14 @@
-import React from 'react';
+import { HeroList } from '../components';
+
+const publisher = 'Marvel Comics';
 
 export const MarvelPage = () => {
-	return <div>MarvelPage</div>;
+	return (
+		<>
+			<h1>{publisher}</h1>
+			<hr />
+
+			<HeroList publisher={publisher} />
+		</>
+	);
 };
