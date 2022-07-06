@@ -12,14 +12,15 @@ export const SearchPage = () => {
 	const { q = '' } = queryString.parse(location.search);
 	const heroes = getHeroesByName(q);
 
+	const showSearch = q.length === 0;
+	const showError = q.length > 0 && heroes.length === 0;
+
 	const { searchText, onInputChange } = useForm({
 		searchText: q,
 	});
 
 	const onSearchSubmit = (event) => {
 		event.preventDefault();
-
-		if (searchText.trim() <= 1) return;
 
 		navigate(`?q=${searchText}`);
 	};
@@ -55,8 +56,11 @@ export const SearchPage = () => {
 					<h4>Results</h4>
 					<hr />
 
-					<div className='alert alert-primary'>Search a hero</div>
-					<div className='alert alert-danger'>
+					<div className='alert alert-primary' style={{ display: showSearch ? '' : 'none' }}>
+						Search a hero
+					</div>
+
+					<div className='alert alert-danger' style={{ display: showError ? '' : 'none' }}>
 						There's no result with <b>{q}</b>
 					</div>
 
