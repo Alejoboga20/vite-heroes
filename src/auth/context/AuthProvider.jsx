@@ -17,16 +17,33 @@ export const AuthProvider = ({ children }) => {
 
 	const login = (name = '') => {
 		const user = { ud: 'ABC', name };
-
-		const loginAction = {
-			type: types.login,
-			payload: name,
-		};
+		const loginAction = { type: types.login, payload: name };
 
 		localStorage.setItem('user', JSON.stringify(user));
 
 		dispatch(loginAction);
 	};
 
-	return <AuthContext.Provider value={{ ...authState, login }}>{children}</AuthContext.Provider>;
+	const logout = () => {
+		localStorage.removeItem('user');
+
+		const logoutAction = {
+			type: types.logout,
+		};
+
+		dispatch(logoutAction);
+	};
+
+	return (
+		<AuthContext.Provider
+			value={{
+				...authState,
+
+				login,
+				logout,
+			}}
+		>
+			{children}
+		</AuthContext.Provider>
+	);
 };
