@@ -1,5 +1,4 @@
-import { authReducer } from '../../../src/auth/context/authReducer';
-import { types } from '../../../src/auth/types/types';
+import { authReducer, types } from '../../../src/auth';
 
 const initialState = {
 	logged: false,
