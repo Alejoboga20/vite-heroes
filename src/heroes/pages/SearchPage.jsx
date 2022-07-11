@@ -56,7 +56,11 @@ export const SearchPage = () => {
 					<h4>Results</h4>
 					<hr />
 
-					<div className='alert alert-primary' style={{ display: showSearch ? '' : 'none' }}>
+					<div
+						className='alert alert-primary'
+						style={{ display: showSearch ? '' : 'none' }}
+						aria-label='alert-danger'
+					>
 						Search a hero
 					</div>
 

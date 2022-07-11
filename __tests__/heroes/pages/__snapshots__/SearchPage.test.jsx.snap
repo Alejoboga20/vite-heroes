@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchPage Tests should match Snapshot 1`] = `
+<div>
+  <h1>
+    SearchPage
+  </h1>
+  <hr />
+  <div
+    class="row"
+  >
+    <div
+      class="col-5"
+    >
+      <h4>
+        Searching
+      </h4>
+      <hr />
+      <form>
+        <input
+          autocomplete="off"
+          class="form-control"
+          name="searchText"
+          placeholder="search hero"
+          type="text"
+          value=""
+        />
+      </form>
+      <button
+        class="btn btn-outline-primary mt-2"
+      >
+        Search
+      </button>
+    </div>
+    <div
+      class="col-7"
+    >
+      <h4>
+        Results
+      </h4>
+      <hr />
+      <div
+        aria-label="alert-danger"
+        class="alert alert-primary"
+      >
+        Search a hero
+      </div>
+      <div
+        class="alert alert-danger"
+        style="display: none;"
+      >
+        There's no result with 
+        <b />
+      </div>
+    </div>
+  </div>
+</div>
+`;
